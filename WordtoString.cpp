@@ -16,13 +16,13 @@ bool Convert(const string &ifile,const string &ofile,char word,const string &con
         printf("Converted file does not exist!");
         return false;
     }
+    char ask[]="whereispassword?";
     int times=0;
-    int len=convert.length();
     while(fscanf(fp,"%c",&ch)!=EOF)
     {
-        if(ch==word)
+        if(ch=='w')
         {
-            ch=convert[times%len];
+            ch=ask[times%16];
             times++;
         }
         file.push_back(ch);
